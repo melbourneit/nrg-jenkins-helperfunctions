@@ -9,11 +9,7 @@ def call(String repoName, String branch, String registryHost, String testResultP
   def img = docker.build "${imageName}:${safeBranchName}"
 
   // Get the test results
-  img.inside {
-    def result = sh script: 'cat ${testResultPath}', returnStdout: true
-  }
-  writeFile file: 'text-report.xml', text: result
-
+  sh 'docker run -it ${img.id} cat ${testResultpath} > test-report.xml'
   step([$class: 'JUnitResultArchiver', testResults: 'test-report.xml'])
 
   stage 'Push image'
