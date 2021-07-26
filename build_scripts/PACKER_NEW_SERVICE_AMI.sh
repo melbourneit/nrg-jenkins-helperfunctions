@@ -2,6 +2,7 @@
 
 # Source: http://build.nrg-aws.com:8080/job/New_NRG_Cart_Jobs/job/PACKER_NEW_SERVICE_AMI
 
+SOURCE_AMI_ID=$(cat /var/tmp/base_ami_id.txt)
 ./utils/create-ami.sh \
 		--aws_access_key=${AWS_ACCESS_KEY_ID} \
         --aws_secret_key=${AWS_SECRET_ACCESS_KEY} \
