@@ -2,8 +2,13 @@
 
 # Source: http://build.nrg-aws.com:8080/job/New_NRG_Cart_Jobs/job/CF_CREATE_SCALING_PROD
 
-# Generate Salt
-#SALT=$(cat /dev/urandom | tr -dc 'a-zA-Z0-9' | fold -w 16 | head -n 1);
+# generate variables containing build date
+BUILD_DATE=$(date +%Y%m%d)
+ENVIRONMENT_LOWER=$(echo $ENVIRONMENT | tr [A-Z] [a-z])
+NAME="${ENVIRONMENT_LOWER}-${BUILD_DATE}${BUILD_NUMBER}"
+CONSUL_SUBDOMAIN="${NAME}-consul"
+PROMETHEUS_SUBDOMAIN="${NAME}-prometheus"
+CART_SUBDOMAIN="${NAME}-cart"
 
 ./utils/create-update-cf.sh \
 		--action=create-stack \

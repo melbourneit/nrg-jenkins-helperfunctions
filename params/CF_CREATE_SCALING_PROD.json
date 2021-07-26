@@ -1,0 +1,25 @@
+{
+    "Active": [],
+    "Decommissioned": [
+        {
+            "Name": "NAME",
+            "Default Value": "production-CURRENTDATE",
+            "Description": "Enter the name of the stack to be created..."
+        },
+        {
+            "Name": "CONSUL_SUBDOMAIN",
+            "Default Value": "production-CURRENTDATE-consul",
+            "Description": "The subdomain of nrg-aws.com from which to serve the Consul UI..."
+        },
+        {
+            "Name": "PROMETHEUS_SUBDOMAIN",
+            "Default Value": "production-CURRENTDATE-prometheus",
+            "Description": "The subdomain of nrg-aws.com from which to serve Prometheus...\n(Will be converted to <PROMETHEUS_SUBDOMAIN>-ap-southeast-2a.nrg-aws.com or <PROMETHEUS_SUBDOMAIN>-ap-southeast-2b.nrg-aws.com to ensure fault-tolerant monitoring)"
+        },
+        {
+            "Name": "CART_SUBDOMAIN",
+            "Default Value": "production-CURRENTDATE-cart",
+            "Description": "The subdomain of nrg-aws.com from which to serve the cart..."
+        }            
+    ]
+}
