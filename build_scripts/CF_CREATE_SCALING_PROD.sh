@@ -10,6 +10,8 @@ CONSUL_SUBDOMAIN="${NAME}-consul"
 PROMETHEUS_SUBDOMAIN="${NAME}-prometheus"
 CART_SUBDOMAIN="${NAME}-cart"
 
+SOURCE_AMI=$(cat /var/tmp/master_ami_id.txt)
+
 ./utils/create-update-cf.sh \
 		--action=create-stack \
         --region=${AWS_REGION} \

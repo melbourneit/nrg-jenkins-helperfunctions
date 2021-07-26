@@ -20,6 +20,11 @@
             "Name": "CART_SUBDOMAIN",
             "Default Value": "production-CURRENTDATE-cart",
             "Description": "The subdomain of nrg-aws.com from which to serve the cart..."
+        },
+        {
+            "Name": "SOURCE_AMI",
+            "Default Value": "",
+            "Description": "Source AMI From the Latest Service AMI Build Job"
         }            
     ]
 }
